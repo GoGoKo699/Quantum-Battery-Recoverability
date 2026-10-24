@@ -75,10 +75,12 @@ This map is completely positive and trace preserving. The second term is never u
 
 After tracing the bath, the physical state is block diagonal in $`Q`$. Identify the block $`Q=N-\ell`$ with a subnormalized logical state $`\rho_\ell`$, including its reference. Its support obeys $`W\le N-\ell`$. Logical basis states outside this support are padded by zero. Define $`W_s=W-n_j`$ and $`z_+=\max\{z,0\}`$. On the full padded logical space set
 
+**(1)**
+
 ```math
 A_\ell=\sqrt{(N-\ell-W)_+},\qquad
 H_\ell=g\sqrt{(N-\ell-W_s)_+}\,X_j.
-\tag{1}
+
 ```
 
 These operators give an exact representation. For a spectator string of weight $`w_s`$, the target coupling connects
@@ -93,12 +95,14 @@ with matrix element $`g\sqrt{N-\ell-w_s}`$. If the second state is unavailable, 
 
 The sector equations are
 
+**(2)**
+
 ```math
 \dot\rho_\ell
 =-i[H_\ell,\rho_\ell]
 -\frac\kappa2\{A_\ell^2,\rho_\ell\}
 +\kappa A_{\ell-1}\rho_{\ell-1}A_{\ell-1},
-\tag{2}
+
 ```
 
 with the last term absent for $`\ell=0`$. They hold for $`0\le\ell\le N`$, with all operators tensored with the reference identity. In particular,
@@ -118,14 +122,18 @@ Choose an integer cutoff $`L`$ with $`N-L>n`$. Define an artificial channel that
 
 The actual and artificial channels agree until the first jump producing loss count $`L+1`$. Quantum-jump histories provide a completely positive decomposition according to this first hitting event. Their common prefix has the same trace in both channels; either continuation preserves that trace. Consequently their output half-trace distance is at most
 
+**(3)**
+
 ```math
 p_{\rm bad}(T)=\Pr\{\ell(T)\ge L+1\}.
-\tag{3}
+
 ```
 
 This argument holds with an arbitrary reference. A uniform upper bound on this probability therefore bounds half the diamond distance between the actual and artificial decoded channels. This is a comparison construction, not a measurement or control operation required of the processor.
 
 Let $`\widetilde\rho`$ be the sum of all good logical blocks and the failure block in the artificial channel. Adding their equations gives
+
+**(4)**
 
 ```math
 \dot{\widetilde\rho}
@@ -133,31 +141,37 @@ Let $`\widetilde\rho`$ be the sum of all good logical blocks and the failure blo
 +\sum_{\ell=0}^L
 \left\{-i[H_\ell-H_*,\rho_\ell]
 +\kappa\mathcal D[A_\ell](\rho_\ell)\right\}.
-\tag{4}
+
 ```
 
 The large scalar part of the jump amplitude has disappeared from the reduced logical derivative. More precisely, for Hermitian $`A`$ and real $`c`$,
 
+**(5)**
+
 ```math
 \mathcal D[A-cI]=\mathcal D[A].
-\tag{5}
+
 ```
 
 On every good sector the full logical space is valid. The eigenvalue diameter of $`A_\ell`$ is
+
+**(6)**
 
 ```math
 d_\ell
 =\sqrt{N-\ell}-\sqrt{N-\ell-n}
 =\frac{n}{\sqrt{N-\ell}+\sqrt{N-\ell-n}}.
-\tag{6}
+
 ```
 
 Choose $`c`$ at the midpoint of this interval. Then $`\|A_\ell-cI\|=d_\ell/2`$. For every positive subnormalized state, including its reference,
 
+**(7)**
+
 ```math
 \left\|\mathcal D[A_\ell](\rho_\ell)\right\|_1
 \le \frac{d_\ell^2}{2}\mathrm{Tr}\rho_\ell.
-\tag{7}
+
 ```
 
 Indeed the sandwich term and the anticommutator together have trace norm at most $`2\|A_\ell-cI\|^2\mathrm{Tr}\rho_\ell`$. A Hamiltonian commutator similarly obeys
@@ -169,6 +183,8 @@ Indeed the sandwich term and the anticommutator together have trace norm at most
 
 Let $`U_*`$ be the propagator of $`H_*`$. Duhamel's formula in its interaction frame, (3), and (7) prove the general bound
 
+**(8)**
+
 ```math
 \begin{aligned}
 \frac12\left\|\mathcal G_T-\mathcal U_*(T)\right\|_\diamond
@@ -178,7 +194,7 @@ Let $`U_*`$ be the propagator of $`H_*`$. Duhamel's formula in its interaction f
 \mathrm{Tr}\rho_\ell(t)\,dt\\
 &+\frac{\kappa n^2T}{16(N-L-n)}.
 \end{aligned}
-\tag{8}
+
 ```
 
 The supremum includes reference-entangled inputs. The last term follows from $`d_\ell^2\le n^2/[4(N-L-n)]`$ and $`\sum_{\ell=0}^L\mathrm{Tr}\rho_\ell\le1`$. Equation (8) bounds the logical effect of all photon losses, including trajectories containing many jumps.
@@ -187,14 +203,18 @@ The supremum includes reference-entangled inputs. The last term follows from $`d
 
 Assume $`N\ge4n`$, and define
 
+**(9)**
+
 ```math
 \nu=N-\frac{n-1}{2},\qquad
 T=\frac{\pi}{2g\sqrt\nu},\qquad
 L=\lfloor N/2\rfloor.
-\tag{9}
+
 ```
 
 The addressed resonant pulse and canonical decoder satisfy
+
+**(10)**
 
 ```math
 \begin{aligned}
@@ -204,10 +224,12 @@ The addressed resonant pulse and canonical decoder satisfy
 {\sqrt\nu+\sqrt{N-L-n+1}}\\
 &+\frac{\kappa n^2T}{16(N-L-n)}.
 \end{aligned}
-\tag{10}
+
 ```
 
 In particular, writing $`\Omega=g\sqrt N`$,
+
+**(11)**
 
 ```math
 \boxed{
@@ -217,7 +239,7 @@ In particular, writing $`\Omega=g\sqrt N`$,
 +\frac{7\kappa}{\Omega}
 +\frac{\kappa n^2}{N\Omega}.
 }
-\tag{11}
+
 ```
 
 Every error bound can also be capped at one.
@@ -226,14 +248,18 @@ Every error bound can also be capped at one.
 
 The loss-count intensity is at most $`\kappa N`$, so
 
+**(12)**
+
 ```math
 \mathbb E\ell(t)\le\kappa Nt,
 \qquad
 p_{\rm bad}(T)\le\frac{\kappa NT}{L+1}.
-\tag{12}
+
 ```
 
 Use the constant comparison Hamiltonian $`H_*=g\sqrt\nu X_j`$. Rationalizing the square roots in (1), and using $`0\le W_s\le n-1`$, gives
+
+**(13)**
 
 ```math
 \|H_\ell-H_*\|
@@ -241,7 +267,7 @@ Use the constant comparison Hamiltonian $`H_*=g\sqrt\nu X_j`$. Rationalizing the
 \frac{g[\ell+(n-1)/2]}
 {\sqrt\nu+\sqrt{N-L-n+1}}
 \quad(\ell\le L).
-\tag{13}
+
 ```
 
 The good-sector states of the artificial and original channels coincide. Their weighted good-sector loss count is bounded by the full original expectation in (12). Integrating (13) therefore bounds the Hamiltonian term in (8) by the second term of (10). The chosen duration gives $`U_*(T)=-iX_j`$. This proves (10).
@@ -272,13 +298,15 @@ This proves (11).
 
 At fixed $`g,\kappa>0`$, the choice $`N/n^{4/3}\to\infty`$ makes every term in (11) vanish. A finite sufficient condition for error at most $`\varepsilon>0`$ is
 
+**(14)**
+
 ```math
 N\ge\max\left\{
 4n,\frac{6n}{\varepsilon},
 \left(\frac{21\kappa}{g\varepsilon}\right)^2,
 \left(\frac{3\kappa n^2}{g\varepsilon}\right)^{2/3}
 \right\}.
-\tag{14}
+
 ```
 
 This upper bound uses one target gate on the full arbitrary register. It does not assume that spectators have known classical weights. Their coherences, and their entanglement with the target and reference, are included in the diamond-norm statement.
@@ -295,16 +323,20 @@ For $`\kappa>0`$, assume
 
 and define
 
+**(15)**
+
 ```math
 T=-\frac2\kappa
 \log\left(1-\frac{\pi\kappa}{4\Omega}\right),
 \qquad
 \eta=e^{-\kappa T}
 =\left(1-\frac{\pi\kappa}{4\Omega}\right)^2.
-\tag{15}
+
 ```
 
 Assume $`N\ge4n/\eta`$. The same constant-coupling resonant pulse, now run for the calibrated time (15), satisfies
+
+**(16)**
 
 ```math
 \boxed{
@@ -317,7 +349,7 @@ Assume $`N\ge4n/\eta`$. The same constant-coupling resonant pulse, now run for t
 +\frac{\kappa n^2T}{4\eta N}.
 \end{aligned}
 }
-\tag{16}
+
 ```
 
 For $`\kappa=0`$, use the continuous convention $`T=\pi/(2\Omega)`$ and $`\eta=1`$; the terms containing loss vanish.
@@ -341,12 +373,14 @@ M(t)=\ell(t)-\int_0^t\lambda(s)\,ds
 
 is a martingale with predictable quadratic variation $`\int_0^t\lambda(s)\,ds`$. Solving the count equation with an integrating factor gives the exact identity
 
+**(17)**
+
 ```math
 \ell(t)
 =N(1-e^{-\kappa t})
 -\kappa\int_0^t e^{-\kappa(t-s)}w_c(s)\,ds
 +Z(t),
-\tag{17}
+
 ```
 
 ```math
@@ -355,22 +389,26 @@ Z(t)=\int_0^t e^{-\kappa(t-s)}\,dM(s).
 
 The martingale isometry and the intensity bound imply
 
+**(18)**
+
 ```math
 \mathbb E Z(t)^2
 =\mathbb E\int_0^t e^{-2\kappa(t-s)}\lambda(s)\,ds
 \le\frac N2(1-e^{-2\kappa t})
 \le\kappa Nt.
-\tag{18}
+
 ```
 
 Since $`0\le w_c\le n`$, equations (17)–(18) yield
+
+**(19)**
 
 ```math
 \mathbb E\left|
 \ell(t)-N(1-e^{-\kappa t})
 \right|
 \le\sqrt{\kappa Nt}+n(1-e^{-\kappa t}).
-\tag{19}
+
 ```
 
 These statements hold uniformly over all input states, including reference-entangled inputs.
@@ -389,10 +427,12 @@ The loss count is monotone. At the final time, the failure event implies
 
 The integral subtracted in (17) is nonnegative, so this event requires $`Z(T)>\eta N/2`$. Chebyshev's inequality and (18) prove
 
+**(20)**
+
 ```math
 p_{\rm bad}(T)
 \le\frac{2(1-\eta^2)}{\eta^2N}.
-\tag{20}
+
 ```
 
 This vanishing tail is needed at fixed $`\Omega`$. A first-moment bound on the total number of emitted photons would not suffice, because the expected count is of order $`N`$ over this pulse.
@@ -401,9 +441,11 @@ This vanishing tail is needed at fixed $`\Omega`$. A first-moment bound on the t
 
 Use the comparison Hamiltonian
 
+**(21)**
+
 ```math
 H_*(t)=\Omega e^{-\kappa t/2}X_j.
-\tag{21}
+
 ```
 
 Its pulse area is
@@ -418,15 +460,19 @@ so its final unitary is $`-iX_j`$. No time-dependent bare coupling is used in th
 
 Let $`m(t)=N(1-e^{-\kappa t})`$. On good sectors, rationalizing square roots gives
 
+**(22)**
+
 ```math
 \|H_\ell-H_*(t)\|
 \le
 \frac{g[|\ell-m(t)|+n-1]}
 {\sqrt{N-L-n+1}+\sqrt{N\eta}}.
-\tag{22}
+
 ```
 
 The denominator is at least $`\sqrt{N\eta}`$. The weighted sum over good-sector states is bounded by the full original expectation in (19), because those good-sector states coincide exactly in the actual and artificial channels. Thus the Hamiltonian term in (8) is at most
+
+**(23)**
 
 ```math
 \frac{g}{\sqrt{N\eta}}
@@ -435,7 +481,7 @@ The denominator is at least $`\sqrt{N\eta}`$. The weighted sum over good-sector 
 +n\int_0^T(1-e^{-\kappa t})\,dt
 +(n-1)T
 \right].
-\tag{23}
+
 ```
 
 Using $`g=\Omega/\sqrt N`$ and bounding the integral by $`T`$ turns (23) into the second and third terms of (16).

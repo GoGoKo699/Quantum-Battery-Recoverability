@@ -4,18 +4,18 @@
 
 This project studies the recoverability of an arbitrary register encoded in a shared Fock battery through
 
-$$
+```math
 V_N|x\rangle=|x\rangle_R|N-|x|\rangle_B,
 \qquad N\ge n.
-$$
+```
 
-Its central question concerns loss **during bounded native control**: can exchange between the battery and the register prevent the emitted field from learning the initial register charge? The model permits time-dependent Jaynes--Cummings couplings $|g_i(t)|\le g$, terms preserving register and total excitation, and arbitrary terminal recovery. On an interval of order $1/(g\sqrt N)$, the controlling parameter is
+Its central question concerns loss **during bounded native control**: can exchange between the battery and the register prevent the emitted field from learning the initial register charge? The model permits time-dependent Jaynes--Cummings couplings $`|g_i(t)|\le g`$, terms preserving register and total excitation, and arbitrary terminal recovery. On an interval of order $`1/(g\sqrt N)`$, the controlling parameter is
 
-$$
+```math
 A=\frac{\kappa n^2}{gN^{3/2}}.
-$$
+```
 
-The converse is uniform over those controls. For fixed $\kappa/g>0$, vanishing worst-case recovery error, measured by half the diamond norm distance, requires $A\to0$; when $A\to\infty$, that error tends to one. An addressed resonant gate with a canonical terminal decoder supplies a matching vanishing-error construction. The [model](../science/model.md) and [control converse](../science/control-converse.md) give the precise definitions and proof. The original interface and several ingredients of the passive benchmark are established prior work. The comparisons below identify those dependencies and the additional content of the active-control analysis. Citation keys refer to [references.bib](references.bib).
+The converse is uniform over those controls. For fixed $`\kappa/g>0`$, vanishing worst-case recovery error, measured by half the diamond norm distance, requires $`A\to0`$; when $`A\to\infty`$, that error tends to one. An addressed resonant gate with a canonical terminal decoder supplies a matching vanishing-error construction. The [model](../science/model.md) and [control converse](../science/control-converse.md) give the precise definitions and proof. The original interface and several ingredients of the passive benchmark are established prior work. The comparisons below identify those dependencies and the additional content of the active-control analysis. Citation keys refer to [references.bib](references.bib).
 
 ## Closest comparisons
 
@@ -40,42 +40,42 @@ This physical mechanism has an optical-metrology precedent. Huver, Wildfeuer and
 
 ### Covariant quantum error correction
 
-For a passive pure-loss interval of transmissivity $\eta$, write $q=1-\eta$. The code is covariant under the physical generator $H_S=-a^\dagger a$ and logical generator $H_L=W$, up to an irrelevant scalar phase. The physical space can be truncated to battery occupations $0,\ldots,N$, which pure loss preserves. Thus the finite-dimensional theorem of Zhou, Liu and Jiang applies directly.
+For a passive pure-loss interval of transmissivity $`\eta`$, write $`q=1-\eta`$. The code is covariant under the physical generator $`H_S=-a^\dagger a`$ and logical generator $`H_L=W`$, up to an irrelevant scalar phase. The physical space can be truncated to battery occupations $`0,\ldots,N`$, which pure loss preserves. Thus the finite-dimensional theorem of Zhou, Liu and Jiang applies directly.
 
-Their error measure is worst-case entanglement **infidelity**, $1-f_{\rm wc}^2$, with $f$ the root fidelity; it is not the purified distance. Theorem 1 and Eqs. (12)--(14) of [arXiv:2005.11918v3](https://arxiv.org/abs/2005.11918v3) relate this error to regularized channel quantum Fisher information (`ZhouLiuJiang2021`).
+Their error measure is worst-case entanglement **infidelity**, $`1-f_{\rm wc}^2`$, with $`f`$ the root fidelity; it is not the purified distance. Theorem 1 and Eqs. (12)--(14) of [arXiv:2005.11918v3](https://arxiv.org/abs/2005.11918v3) relate this error to regularized channel quantum Fisher information (`ZhouLiuJiang2021`).
 
-For this channel, the Kraus gauge $h_k=-k/q$ gives $\beta=0$ and $\alpha=(\eta/q)a^\dagger a$. Substituting $\|\alpha\|=\eta N/q$ and $\Delta H_L=n$ into that theorem yields
+For this channel, the Kraus gauge $`h_k=-k/q`$ gives $`\beta=0`$ and $`\alpha=(\eta/q)a^\dagger a`$. Substituting $`\|\alpha\|=\eta N/q`$ and $`\Delta H_L=n`$ into that theorem yields
 
-$$
+```math
 \epsilon\ge
 \ell_1\!\left(\frac{qn^2}{16\eta N}\right),
 \qquad
 \ell_1(z)=\frac{1+4z-\sqrt{1+4z}}{2(1+4z)}
 =z+O(z^2).
-$$
+```
 
-Consequently, the passive quadratic scaling and its small-error converse coefficient are inherited. The exact finite-size recovery formula, saturation, and worst-case error tending to one provide additional characterization of this particular channel. They should be presented as a solvable benchmark for the dynamic problem. Since native exchange changes $W$ and battery occupation during the interval, the passive covariance argument does not directly establish the active-control converse.
+Consequently, the passive quadratic scaling and its small-error converse coefficient are inherited. The exact finite-size recovery formula, saturation, and worst-case error tending to one provide additional characterization of this particular channel. They should be presented as a solvable benchmark for the dynamic problem. Since native exchange changes $`W`$ and battery occupation during the interval, the passive covariance argument does not directly establish the active-control converse.
 
 ### Polar recovery and a physically accessible syndrome
 
-Gregoratti and Werner's Proposition 4, Eqs. (18)--(20), establishes the optimal Choi entanglement fidelity for a fixed, flagged Kraus instrument $t_k$:
+Gregoratti and Werner's Proposition 4, Eqs. (18)--(20), establishes the optimal Choi entanglement fidelity for a fixed, flagged Kraus instrument $`t_k`$:
 
-$$
+```math
 F_{e,\max}=\frac{1}{d^2}\sum_k
-\bigl(\operatorname{Tr}|t_k|\bigr)^2.
-$$
+\bigl(\mathrm{Tr}|t_k|\bigr)^2.
+```
 
-Undoing the unitary factor in each polar decomposition attains this value. See [arXiv:quant-ph/0403092](https://arxiv.org/abs/quant-ph/0403092) (`GregorattiWerner2004`). For the passive battery channel, distinct loss counts occupy orthogonal total-excitation sectors, so the relevant flag is available from the joint register--battery system. Applying this established recovery principle leaves positive diagonal amplitudes $\sqrt{p_k(w)}$, with
+Undoing the unitary factor in each polar decomposition attains this value. See [arXiv:quant-ph/0403092](https://arxiv.org/abs/quant-ph/0403092) (`GregorattiWerner2004`). For the passive battery channel, distinct loss counts occupy orthogonal total-excitation sectors, so the relevant flag is available from the joint register--battery system. Applying this established recovery principle leaves positive diagonal amplitudes $`\sqrt{p_k(w)}`$, with
 
-$$
+```math
 p_k(w)=\binom{N-w}{k}q^k\eta^{N-w-k}.
-$$
+```
 
 The worst-case optimization over register weights and the comparison with half-diamond distance are additional channel-specific steps. Neither the use of polar recovery nor optimality for a maximally mixed logical input should be described as a new general recovery theorem.
 
 ### Randomization
 
-For the corrected diagonal channel, a uniform product-$X$ conjugation averages over excitation assignments and produces a stochastic $Z$-Pauli channel. Its half-diamond error equals its Choi entanglement infidelity. This is a special case of Pauli noise tailoring, as developed in [Wallman and Emerson](https://arxiv.org/abs/1512.01098) (`WallmanEmerson2016`). It replaces sensitivity to the full weight range by sensitivity to the binomial weight variance and can reduce the ideal passive energy scaling.
+For the corrected diagonal channel, a uniform conjugation by products of $`X`$ operators averages over excitation assignments and produces a stochastic Pauli channel of $`Z`$ strings. Its half-diamond error equals its Choi entanglement infidelity. This is a special case of Pauli noise tailoring, as developed in [Wallman and Emerson](https://arxiv.org/abs/1512.01098) (`WallmanEmerson2016`). It replaces sensitivity to the full weight range by sensitivity to the binomial weight variance and can reduce the ideal passive energy scaling.
 
 The distinction relevant to the active theorem is temporal and physical. A mask already applied before the noisy interval changes the initial interface. A software frame update alone does not change battery occupation. A mask implemented after the specified dressed input arrives is subject to the native charge-motion bound, and cannot erase a photon record that has already escaped.
 
@@ -85,11 +85,11 @@ Exact correction on a restricted code is governed by the Knill--Laflamme criteri
 
 For the present passive channel, the loss probabilities span all weight projectors. Applying the standard exact-correction criterion then proves that the largest correctable code has dimension
 
-$$
+```math
 d_{\max}=\max_w\binom nw=\binom n{\lfloor n/2\rfloor}.
-$$
+```
 
-The [passive-recovery analysis](../science/passive-recovery.md#6-protected-subspaces-and-their-exact-dimension) gives the channel-specific dimension proof. Its asymptotic count of $n-\tfrac12\log_2n-O(1)$ exactly stored qubits concerns an idle code. Universal gates, encoding cost, and protection during operations require separate analysis. The unrestricted-register converse therefore coexists with a large protected subspace.
+The [passive-recovery analysis](../science/passive-recovery.md#6-protected-subspaces-and-their-exact-dimension) gives the channel-specific dimension proof. Its asymptotic count of $`n-\tfrac12\log_2n-O(1)`$ exactly stored qubits concerns an idle code. Universal gates, encoding cost, and protection during operations require separate analysis. The unrestricted-register converse therefore coexists with a large protected subspace.
 
 ## Energy, speed, and recoverable information
 
@@ -105,11 +105,11 @@ Vu, Kuwahara and Saito give finite-time relations between average gate fidelity 
 
 Quantum-jump unraveling is standard: [Dalibard, Castin and Mølmer](https://doi.org/10.1103/PhysRevLett.68.580) give an early wave-function formulation (`DalibardCastinMolmer1992`). The textbooks `WisemanMilburn2010` and `BreuerPetruccione2002` develop its measurement interpretation and stochastic dynamics. Purification fidelity, its relation to distinguishability, and channel norms are established quantum-information tools; see [Uhlmann](https://doi.org/10.1016/0034-4877(76)90060-4), [Fuchs and van de Graaf](https://arxiv.org/abs/quant-ph/9712042), and [Watrous](https://jhwatrous.github.io/books-and-courses.html) (`Uhlmann1976`, `FuchsVanDeGraaf1999`, `Watrous2018`).
 
-The additional argument links these tools through this architecture's conservation law. Along a photon-count trajectory, $Q=N-L(t)$, so the emission intensity is
+The additional argument links these tools through this architecture's conservation law. Along a photon-count trajectory, $`Q=N-L(t)`$, so the emission intensity is
 
-$$
+```math
 \lambda(t)=\kappa\bigl[N-L(t)-\langle W\rangle_c(t)\bigr].
-$$
+```
 
 Bounds on charge motion hold uniformly over the allowed controls. They limit how quickly distinct initial weights can change their count statistics. A distinguishable early record bounds coherence of the entire accessible output and therefore defeats every terminal recovery. A growing set of weights strengthens this to worst-case error approaching one. The construction uses the exact loss-sector dynamics and cancellation of the scalar part of a Hermitian jump operator, rather than classifying every emitted photon as a failed gate.
 
@@ -117,6 +117,6 @@ Bounds on charge motion hold uniformly over the allowed controls. They limit how
 
 The result is a frontier for the stated dressed interface and operation interval. It does not bound the capacity of all protected subspaces, rule out constant-weight encodings, or constrain a register masked before the interval begins. The broad converse permits arbitrary excitation-preserving interactions; a universal gate-duration claim would need an additional speed bound. The achieved gate upper bound uses switchable couplers and an ideal terminal decoder.
 
-The fractional exponent also uses the growth $\Omega_N=g\sqrt N$. A physical ceiling on the allowed Rabi frequency must be included separately; the corresponding energy--speed parameter is $\kappa n^2/(N\Omega_N)$. Finally, a single-operation result does not imply error independent of circuit depth, or a complete fault-tolerant architecture with free encoding, decoding, reset, and recharge.
+The fractional exponent also uses the growth $`\Omega_N=g\sqrt N`$. A physical ceiling on the allowed Rabi frequency must be included separately; the corresponding energy--speed parameter is $`\kappa n^2/(N\Omega_N)`$. Finally, a single-operation result does not imply error independent of circuit depth, or a complete fault-tolerant architecture with free encoding, decoding, reset, and recharge.
 
 The cited works identify the closest direct dependencies and comparisons. The bounded-control recovery frontier is the project's central contribution; passive scaling, polar recovery, Pauli twirling, and the general use of quantum trajectories remain attributed to their established sources.

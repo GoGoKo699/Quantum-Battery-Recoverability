@@ -54,7 +54,7 @@ For this channel, the Kraus gauge $`h_k=-k/q`$ gives $`\beta=0`$ and $`\alpha=(\
 =z+O(z^2).
 ```
 
-Consequently, the passive quadratic scaling and its small-error converse coefficient are inherited. The exact finite-size recovery formula, saturation, and worst-case error tending to one provide additional characterization of this particular channel. They should be presented as a solvable benchmark for the dynamic problem. Since native exchange changes $`W`$ and battery occupation during the interval, the passive covariance argument does not directly establish the active-control converse.
+Consequently, the passive quadratic scaling and its small-error converse coefficient are inherited. The exact finite-size recovery formula, explicit finite bounds, and worst-case error tending to one provide additional characterization of this particular channel. They should be presented as a solvable benchmark for the dynamic problem. Since native exchange changes $`W`$ and battery occupation during the interval, the passive covariance argument does not directly establish the active-control converse.
 
 ### Polar recovery and a physically accessible syndrome
 

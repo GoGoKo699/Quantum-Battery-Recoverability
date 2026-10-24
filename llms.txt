@@ -6,7 +6,7 @@ between photon-count information and bounded native charge motion.
 The scientific account is organized by topic under science/.
 
 Canonical files:
-- README.md: question, result table, proof routes, finite figure, reproduction,
+- README.md: question, result table, proof and learning routes, finite figure, reproduction,
   essential scope, and purpose/contact.
 - science/model.md: authoritative input V_N, native Hamiltonians, bath,
   recovered-output convention, parameter A, C1/C2/G1/G2/P1, and proof map.
@@ -26,8 +26,20 @@ Canonical files:
 - verification/run_checks.py: finite verification and numerical certificates.
 - verification/generate_figures.py: regenerates data and SVG directly from Python.
 
+Learning entrypoints:
+- learning/MILESTONES.md: the common project-defined map, exactly M01–M30,
+  with 14 background/preliminaries and 16 narrative/innovation milestones; central
+  questions, understanding targets, dependencies, conceptual connections,
+  and canonical source pointers.
+- learning/WISEMAN_MILBURN_BRIDGE.md: the single educational anchor,
+  Wiseman and Milburn's Quantum Measurement and Control (2010), with verified
+  section pointers, notation/rate conventions, a worked photon-loss example,
+  and the locally supplied connections to recovery and native control limits.
+
 Reader routes:
 - Physical story: model -> interpretation -> control-converse -> native-gates.
+- Self-directed study: use the Wiseman–Milburn bridge alongside M01–M30;
+  the map describes the project independently of any reader's prior knowledge.
 - Theorem review: model -> the relevant complete proof -> related-work.
 - Solvable channel benchmark: passive-recovery -> channel_models -> run_checks.
 - Reproduction: verification/README.md -> the documented commands and outputs.
@@ -41,6 +53,8 @@ Preserve these distinctions:
   The upper bound demonstrates good controls, not performance of every control.
 - The broad theorem prescribes a native-clock interval. A target unitary alone
   cannot force time if unrestricted terminal recovery could perform it for free.
+- The converse uses T>=c0/Omega for fixed positive c0 along sequences with
+  bounded kappa/Omega; the two displayed fixed-parameter regimes satisfy this.
 - The narrower gate-duration corollary requires native pre-recovery transfer
   or a stipulated native lossless implementation and [H0,n_j]=0.
 - Fixed g and fixed enhanced rate Omega=g sqrt(N) are different hardware scalings.
@@ -55,5 +69,10 @@ Preserve these distinctions:
   twirling have established antecedents. Read attribution before claiming novelty.
 - Finite reference-input infidelity is not an optimized diamond norm.
   Numerical agreement does not prove the universal theorem or external review.
+- The single educational anchor supplies foundations. The bridge identifies
+  locally supplied derivations and research-level tools; primary research
+  citations remain necessary for attribution and are not extra assigned anchors.
+- The milestone map and bridge guide understanding; the canonical science
+  files own exact theorem statements, proof domains, and complete arguments.
 - The result is a native-operation frontier, not an arbitrary-depth computer
   with unpriced preparation, recharge, decoding, measurement, or reset.

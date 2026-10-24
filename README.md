@@ -8,7 +8,7 @@ A register of $`n`$ qubits is represented in the fixed-excitation interface
 V_N|x\rangle=|x\rangle|N-w(x)\rangle,\qquad N\ge n.
 ```
 
-The shared oscillator loses photons at rate $`\kappa`$, while each native qubit–battery coupling has magnitude at most $`g`$. Let $`\Omega=g\sqrt N`$. On an operation interval of order $`1/\Omega`$, the controlling parameter is
+The shared oscillator loses photons at rate $`\kappa`$, while each native qubit–battery coupling has magnitude at most $`g`$. Let $`\Omega=g\sqrt N`$. On an operation interval of order $`1/\Omega`$, along scalings with bounded $`\kappa/\Omega`$, the controlling parameter is
 
 ```math
 A=\frac{\kappa n^2}{N\Omega}.
@@ -42,6 +42,14 @@ The logical cost of emission depends on the variation of the loss amplitude acro
 | Finite calculations and what they verify | [Verification](verification/README.md) |
 
 [The LLM reading guide](llms.txt) maps questions to the authoritative scientific files.
+
+## Learn the project
+
+The educational anchor is **Howard M. Wiseman and Gerard J. Milburn, *Quantum Measurement and Control* (2010)**. The [Wiseman–Milburn bridge](learning/WISEMAN_MILBURN_BRIDGE.md) identifies the relevant sections, translates the notation and loss-rate conventions, and works through the connection from a dressed qubit's photon loss to the full-register recoverability frontier. The bridge supplies the channel-distance and recovery arguments that this project needs beyond the anchor's measurement-and-control foundations.
+
+The [30-milestone map](learning/MILESTONES.md) gives a common route through the project. Its **14 background/preliminaries milestones** build the physical and quantum-information framework; its **16 narrative/innovation milestones** join the information-leakage converse, matching native gates, and passive benchmarks into the complete resource account. Every milestone has a central question, an understanding target, earlier dependencies, a conceptual connection, and source pointers.
+
+Use the bridge alongside the milestones for self-directed study. The exact assumptions and complete proofs remain in the scientific pages above.
 
 ## Reproduce the finite calculations
 

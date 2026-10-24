@@ -1,0 +1,59 @@
+# Quantum Battery Recoverability
+
+This project studies a shared lossy Fock battery powering an arbitrary full
+dressed n-qubit register. Its central result is a recoverability frontier
+between photon-count information and bounded native charge motion.
+The scientific account is organized by topic under science/.
+
+Canonical files:
+- README.md: question, result table, proof routes, finite figure, reproduction,
+  essential scope, and purpose/contact.
+- science/model.md: authoritative input V_N, native Hamiltonians, bath,
+  recovered-output convention, parameter A, C1/C2/G1/G2/P1, and proof map.
+- science/control-converse.md: finite critical-scale and weight-ladder bounds;
+  exact count identity; seed-aware recovery converse; native population speed.
+- science/native-gates.md: CPTP decoder, exact loss-sector equations,
+  stopped-channel comparison, native-clock pulse and fixed-rate calibration.
+- science/passive-recovery.md: exact passive diamond optimum; finite bounds;
+  ideal randomized interface; maximal exactly correctable idle code dimension.
+- science/interpretation.md: physical mechanism, energy/speed regimes,
+  first-photon versus logical error, decoder and encoding resource boundaries.
+- references/related-work.md: primary attribution and operational-model comparison.
+- references/references.bib: verified primary-source bibliography.
+- verification/README.md: commands, numerical conventions, and limits.
+- verification/channel_models.py: exact finite affinity and flagged Lindblad
+  routines; independent tensor-product evolution used in a boundary check.
+- verification/run_checks.py: finite verification and numerical certificates.
+- verification/generate_figures.py: regenerates data and SVG directly from Python.
+
+Reader routes:
+- Physical story: model -> interpretation -> control-converse -> native-gates.
+- Theorem review: model -> the relevant complete proof -> related-work.
+- Solvable channel benchmark: passive-recovery -> channel_models -> run_checks.
+- Reproduction: verification/README.md -> the documented commands and outputs.
+
+Preserve these distinctions:
+- N is total register-plus-battery excitation; battery occupation is N-W.
+- Error is half diamond distance, including reference-entangled inputs.
+- Terminal recovery returns only the logical register; seed and ancillary
+  workspace may be used but are not delivered as extra output systems.
+- The converse is uniform over the specified bounded coherent control class.
+  The upper bound demonstrates good controls, not performance of every control.
+- The broad theorem prescribes a native-clock interval. A target unitary alone
+  cannot force time if unrestricted terminal recovery could perform it for free.
+- The narrower gate-duration corollary requires native pre-recovery transfer
+  or a stipulated native lossless implementation and [H0,n_j]=0.
+- Fixed g and fixed enhanced rate Omega=g sqrt(N) are different hardware scalings.
+  N>>n^(4/3) is not an architecture-independent energy law.
+- The calibrated fixed-Omega pulse requires Omega>pi*kappa/4; this is a
+  construction condition, not an impossibility threshold for all protocols.
+- Switchable spectator couplers and an ideal terminal decoder are explicit
+  upper-bound resources. Decoder time, locality, work and noise remain outside.
+- Constant-weight codes and masks applied before V_N change the input model.
+  Full-register collapse does not mean vanishing hardware information capacity.
+- The passive leading quadratic bound, conditional polar recovery and Pauli
+  twirling have established antecedents. Read attribution before claiming novelty.
+- Finite reference-input infidelity is not an optimized diamond norm.
+  Numerical agreement does not prove the universal theorem or external review.
+- The result is a native-operation frontier, not an arbitrary-depth computer
+  with unpriced preparation, recharge, decoding, measurement, or reset.
